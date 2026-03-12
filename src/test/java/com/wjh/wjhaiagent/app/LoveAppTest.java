@@ -59,4 +59,6 @@ class LoveAppTest {
         String answer= loveApp.doChatWithRag(message, chatId);
         Assertions.assertNotNull(answer);
     }
+=======
+>>>>>>> 1a2d6159bb5b98bed9949eab30b939cef64223c1
 }
