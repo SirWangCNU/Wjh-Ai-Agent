@@ -2,6 +2,8 @@ package com.wjh.wjhaiagent.app;
 
 import com.wjh.wjhaiagent.advisor.MyLoggerAdvisor;
 import com.wjh.wjhaiagent.chatmemory.FileBasedChatMemory;
+import com.wjh.wjhaiagent.rag.LoveAppRagCustomFactory;
+import com.wjh.wjhaiagent.rag.QueryRewriter;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.ai.chat.client.ChatClient;
@@ -98,17 +100,32 @@ public class LoveApp {
     @Resource
     private VectorStore loveAppVectorStore;
 
+    @Resource
+    private VectorStore pgVectorVectorStore;
+
+    @Resource
+    private QueryRewriter queryRewriter;
+
+    @Resource
+    private VectorStore loveAppRagCustomFactory;
+
     public String doChatWithRag(String message ,String chatId){
+        String rewrittenMessage = queryRewriter.doQueryRewrite(message);
         ChatResponse chatResponse = chatClient
                 .prompt()
-                .user(message)
+                //使用改写后的查询
+                .user(rewrittenMessage)
                 .advisors(spec->spec.param(ChatMemory.CONVERSATION_ID,chatId))
                 //开启日志
                 .advisors(new MyLoggerAdvisor())
                 //应用RAG知识问答
                 //.advisors(new QuestionAnswerAdvisor(loveAppVectorStore))
                 //应用RAG检索增强服务（基于云知识库）
-                .advisors(loveAppRagCloudAdvisor)
+                //.advisors(loveAppRagCloudAdvisor)
+                //应用RAG检索增强服务（基于PgVector向量存储）
+                //.advisors(new QuestionAnswerAdvisor(pgVectorVectorStore))
+                //基于自定义RAG检索增强顾问
+                .advisors(LoveAppRagCustomFactory.createLoveAppRagCustomAdvisor(loveAppRagCustomFactory,"已婚"))
                 .call()
                 .chatResponse();
         String content = chatResponse.getResult().getOutput().getText();

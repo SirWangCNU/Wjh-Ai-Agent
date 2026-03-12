@@ -28,6 +28,7 @@ public class LoveAppVectorStoreConfig {
     VectorStore loveAppVectorStore(EmbeddingModel dashscopeEmbeddingModel) {
         SimpleVectorStore simpleVectorStore = SimpleVectorStore.builder(dashscopeEmbeddingModel).build();
         List<Document> documentList = loveAppDocumentLoader.loadMarkdowns();
+
         simpleVectorStore.add(documentList);
 
         return simpleVectorStore;

@@ -3,6 +3,10 @@ spring:
     name: wjh-ai-agent
   profiles:
     active: local
+  datasource:
+    url: jdbc:postgresql://pgm-2ze6n6epn1a79w0jto.pg.rds.aliyuncs.com:5432/wjh_ai_agent
+    username: My_user_wjh1
+    password: My_user_wjh1
   vectorstore:
     pgvector:
       initialize-schema: true
