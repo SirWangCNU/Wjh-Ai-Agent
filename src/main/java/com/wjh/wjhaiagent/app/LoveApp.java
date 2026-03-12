@@ -2,19 +2,28 @@ package com.wjh.wjhaiagent.app;
 
 import com.wjh.wjhaiagent.advisor.MyLoggerAdvisor;
 import com.wjh.wjhaiagent.chatmemory.FileBasedChatMemory;
+<<<<<<< HEAD
 import jakarta.annotation.Resource;
+=======
+>>>>>>> 1a2d6159bb5b98bed9949eab30b939cef64223c1
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.client.advisor.MessageChatMemoryAdvisor;
 import org.springframework.ai.chat.client.advisor.SimpleLoggerAdvisor;
+<<<<<<< HEAD
 import org.springframework.ai.chat.client.advisor.api.Advisor;
 import org.springframework.ai.chat.client.advisor.vectorstore.QuestionAnswerAdvisor;
+=======
+>>>>>>> 1a2d6159bb5b98bed9949eab30b939cef64223c1
 import org.springframework.ai.chat.memory.ChatMemory;
 import org.springframework.ai.chat.memory.InMemoryChatMemoryRepository;
 import org.springframework.ai.chat.memory.MessageWindowChatMemory;
 import org.springframework.ai.chat.model.ChatModel;
 import org.springframework.ai.chat.model.ChatResponse;
+<<<<<<< HEAD
 import org.springframework.ai.vectorstore.VectorStore;
+=======
+>>>>>>> 1a2d6159bb5b98bed9949eab30b939cef64223c1
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -86,6 +95,7 @@ public class LoveApp {
         log.info("loveReport: {}", loveReport);
         return loveReport;
     }
+<<<<<<< HEAD
 
     /**
      * Ai恋爱知识库问答功能
@@ -117,4 +127,6 @@ public class LoveApp {
 
 
 
+=======
+>>>>>>> 1a2d6159bb5b98bed9949eab30b939cef64223c1
 }
