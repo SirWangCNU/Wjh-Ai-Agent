@@ -32,11 +32,7 @@ public class LoveAppDocumentLoader {
     public List<Document> loadMarkdowns() {
         List<Document> allDocuments = new ArrayList<>();
         try {
-<<<<<<< HEAD
             Resource[] resources = resourcePatternResolver.getResources("classpath:doucument/*.md");
-=======
-            Resource[] resources = resourcePatternResolver.getResources("classpath:document/*.md");
->>>>>>> 1a2d6159bb5b98bed9949eab30b939cef64223c1
             for (Resource resource : resources) {
                 String filename = resource.getFilename();
                 // 提取文档倒数第 3 和第 2 个字作为标签
