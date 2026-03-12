@@ -16,10 +16,6 @@ class WjhAiAgentApplicationTests {
     @Test
     void contextLoads() {
         loveAppDocumentLoader.loadMarkdowns();
-
-    @Test
-    void contextLoads() {
-
     }
 
 }
