@@ -40,3 +40,7 @@ knife4j:
 logging:
   level:
     org.springframework.ai.chat.client.advisor.SimpleLoggerAdvisor: debug
+
+#searchAPI
+search-api:
+  api-key: giAEP3wXdD5noa17Qhpdp9sc
