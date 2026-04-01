@@ -31,7 +31,7 @@ springdoc:
   group-configs:
     - group: 'default'
       paths-to-match: '/**'
-      packages-to-scan: src/main/java/com/wjh/wjhaiagent/controller
+      packages-to-scan: com.wjh.wjhaiagent.controller
 # knife4j的增强配置，不需要增强可以不配
 knife4j:
   enable: true
@@ -39,7 +39,7 @@ knife4j:
     language: zh_cn
 logging:
   level:
-    org.springframework.ai.chat.client.advisor.SimpleLoggerAdvisor: debug
+    org.springframework.ai: debug
 
 #searchAPI
 search-api:

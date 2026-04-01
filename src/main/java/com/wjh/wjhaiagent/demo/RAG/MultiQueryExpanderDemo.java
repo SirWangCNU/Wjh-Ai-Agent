@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * 查询扩展Demo
  */
-@Component
+//@Component
 public class MultiQueryExpanderDemo {
 
     private final ChatClient.Builder chatClientBuilder;
